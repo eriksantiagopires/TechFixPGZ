@@ -1,0 +1,464 @@
+*{
+    user-select: none;
+}
+
+/* ==========================================================================
+   ESTILOS GENERALES Y RESETS BASE (ESTILO NEÓN CYBERPUNK)
+   ========================================================================== */
+body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    font-family: system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    animation: fadeInContent 0.4s ease-out;
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; transform: scale(0.99); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Navbar Personalizada */
+.navbar-custom {
+    background-color: #000000 !important;
+    border-bottom: 1px solid rgba(56, 161, 219, 0.15) !important;
+    padding: 0.8rem 0;
+}
+
+.navbar-custom .nav-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #38a1db !important;
+    text-shadow: 0 0 8px rgba(56, 161, 219, 0.6);
+}
+
+/* ==========================================================================
+   TARXETAS MENÚ PRINCIPAL (INDEX.HTML) - CONTROL ABSOLUTO DE FONDOS
+   ========================================================================== */
+.max-width-menu {
+    max-width: 950px;
+}
+
+.card-custom {
+    background-color: #000000 !important; 
+    border: 1px solid rgba(56, 161, 219, 0.3) !important;
+    border-radius: 8px !important;
+    padding: 2.5rem 1.5rem !important;
+    min-height: 180px;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    cursor: pointer;
+}
+
+.menu-icon-wrapper i {
+    font-size: 2.5rem;
+    color: #38a1db;
+    filter: drop-shadow(0 0 5px rgba(56, 161, 219, 0.5));
+    transition: all 0.3s ease;
+    background: transparent !important;
+}
+
+.menu-link-text {
+    color: #ffffff !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.card-link-wrapper:hover .card-custom {
+    transform: translateY(-5px) !important;
+    border-color: #38a1db !important;
+    box-shadow: 0 0 25px rgba(56, 161, 219, 0.55), inset 0 0 10px rgba(56, 161, 219, 0.15) !important;
+}
+
+.card-link-wrapper:hover .menu-icon-wrapper i {
+    color: #ffffff;
+    filter: drop-shadow(0 0 10px #38a1db);
+    transform: scale(1.1);
+}
+
+.card-link-wrapper:hover .menu-link-text {
+    color: #38a1db !important;
+}
+
+/* ==========================================================================
+   CATÁLOGO DE SERVIZOS DE REPARACIÓN (REPARACIONS.HTML)
+   ========================================================================== */
+.tech-tabs {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: inline-flex;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    background-color: #38a1db;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(56, 161, 219, 0.4);
+}
+
+.search-wrapper input {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    padding: 0.55rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    width: 280px;
+    transition: all 0.25s ease;
+}
+
+.search-wrapper input:focus {
+    outline: none;
+    border-color: #38a1db !important;
+    box-shadow: 0 0 12px rgba(56, 161, 219, 0.3);
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.catalog-card {
+    background-color: #000000 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+.catalog-card:hover {
+    border-color: #38a1db !important;
+    box-shadow: 0 0 20px rgba(56, 161, 219, 0.25);
+    transform: translateY(-3px);
+}
+
+.catalog-img-wrapper {
+    background-color: rgba(255, 255, 255, 0.01) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 2.2rem 1rem !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalog-icon-minimal {
+    font-size: 3rem;
+    color: #38a1db;
+    filter: drop-shadow(0 0 6px rgba(56, 161, 219, 0.5));
+    transition: all 0.25s ease-in-out;
+    background: transparent !important;
+}
+
+.catalog-card:hover .catalog-icon-minimal {
+    color: #ffffff;
+    filter: drop-shadow(0 0 12px rgba(56, 161, 219, 0.8));
+    transform: scale(1.06);
+}
+
+.catalog-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.catalog-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+}
+
+.catalog-subtitle {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 1rem;
+}
+
+.catalog-rating { font-size: 0.75rem; margin-bottom: 1rem; }
+.catalog-rating .stars { color: #ffb703; }
+.catalog-rating .rating-count { color: rgba(255, 255, 255, 0.3); margin-left: 4px; }
+
+.catalog-price-box {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.price-label { font-size: 0.75rem; color: rgba(255, 255, 255, 0.5); }
+.price-value { font-size: 1rem; font-weight: 700; color: #38a1db; }
+.catalog-footer-text { font-size: 0.7rem; color: rgba(255, 255, 255, 0.35); margin: 0; }
+
+/* ==========================================================================
+   MODALES Y BOTÓN MINIMALISTA (ESTILO IMAGE_872662.PNG)
+   ========================================================================== */
+.custom-modal-content {
+    background-color: #0b0b0c !important;
+    border: 1px solid rgba(56, 161, 219, 0.3) !important;
+    border-radius: 12px !important;
+    padding: 1rem;
+}
+
+.modal-img-container {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-price-display {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+}
+
+.custom-check {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 0.75rem 0.75rem 0.75rem 2.2rem !important;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.custom-check:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(56, 161, 219, 0.2);
+}
+
+.custom-check .form-check-input:checked {
+    background-color: #38a1db;
+    border-color: #38a1db;
+    box-shadow: 0 0 8px rgba(56, 161, 219, 0.5);
+}
+
+/* BOTÓN ESTILO SOLICITADO */
+.btn-action-tech {
+    background-color: #000000 !important; 
+    color: #38a1db !important; 
+    border: 1px solid rgba(255, 255, 255, 0.08) !important; 
+    border-radius: 6px !important;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    font-weight: 700 !important; 
+    text-transform: uppercase;
+    transition: all 0.25s ease-in-out !important;
+    box-shadow: none;
+}
+
+.btn-action-tech:hover {
+    background-color: rgba(56, 161, 219, 0.05) !important; 
+    border-color: #38a1db !important; 
+    color: #ffffff !important; 
+    box-shadow: 0 0 15px rgba(56, 161, 219, 0.4), inset 0 0 8px rgba(56, 161, 219, 0.1) !important; 
+}
+
+/* ==========================================================================
+   ELEMENTOS NUEVOS DEL FORMULARIO DE CONTACTO DINÁMICO
+   ========================================================================== */
+.tech-form-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+}
+
+.tech-input {
+    background-color: #000000 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    font-size: 0.85rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+.tech-input:focus {
+    outline: none;
+    border-color: #38a1db !important;
+    box-shadow: 0 0 10px rgba(56, 161, 219, 0.25);
+}
+
+.tech-input::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+/* Animacións de entrada suaves para os cambios de pantalla */
+.entry-fade {
+    animation: stepEnter 0.25s ease-out forwards;
+}
+
+@keyframes stepEnter {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   NOTIFICACIÓN FLOTANTE INTEGRADA (TOAST CYBERPUNK - RELEVO DE ALERTA)
+   ========================================================================== */
+.custom-toast {
+    background-color: #0b0b0c !important; 
+    border: 1px solid rgba(56, 161, 219, 0.4) !important; 
+    border-radius: 8px !important;
+    box-shadow: 0 0 20px rgba(56, 161, 219, 0.25) !important; 
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-toast .toast-body {
+    padding: 1rem !important;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.toast.showing {
+    animation: toastFadeIn 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes toastFadeIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* PANTALLA DE TRANSICIÓN GLOBAL */
+.page-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000; /* Fondo negro absoluto */
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s;
+    pointer-events: none; /* Asegura que no bloquee clics una vez invisible */
+}
+
+/* Estado de desvanecimiento */
+.page-transition-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Animación de los elementos al entrar */
+.entry-fade {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.text-light-muted { color: rgba(255, 255, 255, 0.5) !important; }
+.tracking-wide { letter-spacing: 1.5px; }
+
+/* Animación de parpadeo neón */
+.neon-flicker {
+    animation: flicker 3s infinite alternate;
+}
+
+
+/* Colores base */
+.flicker-blue { color: #38a1db !important; }
+.flicker-white { color: #ffffff !important; }
+
+/* Animaciones ligeramente más pausadas */
+.neon-p { animation: flicker-p 1.6s infinite alternate; }
+.neon-g { animation: flicker-g 1.9s infinite alternate; }
+.neon-z { animation: flicker-z 1.7s infinite alternate; }
+
+/* Efecto de parpadeo realista */
+@keyframes flicker-p {
+    0%, 19%, 21%, 53%, 55%, 100% { text-shadow: 0 0 6px #38a1db, 0 0 12px #38a1db; opacity: 1; }
+    20%, 54% { text-shadow: none; opacity: 0.2; }
+}
+
+@keyframes flicker-g {
+    0%, 15%, 17%, 55%, 57%, 100% { text-shadow: 0 0 6px #ffffff, 0 0 12px #ffffff; opacity: 1; }
+    16%, 56% { text-shadow: none; opacity: 0.2; }
+}
+
+@keyframes flicker-z {
+    0%, 25%, 27%, 60%, 62%, 100% { text-shadow: 0 0 6px #38a1db, 0 0 12px #38a1db; opacity: 1; }
+    26%, 61% { text-shadow: none; opacity: 0.2; }
+}
+
+.card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: #38a1db !important;
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(56, 161, 219, 0.2);
+}
+
+.btn-outline-primary {
+    border-color: #38a1db;
+    color: #38a1db;
+}
+
+.btn-outline-primary:hover {
+    background-color: #38a1db;
+    color: #fff;
+}
+
+.catalog-card {
+    cursor: pointer;
+    position: relative;
+    z-index: 10; /* Asegura que a tarxeta estea por encima doutras capas */
+    transition: transform 0.2s ease;
+}
+
+.catalog-card:hover {
+    transform: scale(1.02);
+    border: 1px solid #38a1db;
+}
+
+.catalog-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.catalog-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compromiso Técnico - TechFixPGZ</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-black text-white">
+
+    <div class="page-transition-overlay" id="pageOverlay">
+        <div class="spinner-neon"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top m-0">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="archivos/blanco_sin_fondo.png" alt="💻" width="35" height="35"
+                    class="me-3 d-inline-block align-text-top nav-logo-grey">
+                <span class="fw-bold text-white fs-4">
+                    TechFix<span style="color: #38a1db;">P</span>G<span style="color: #38a1db;">Z</span>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="reparacions.html">Servizos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Tenda Virtual</a></li>
+                    <li class="nav-item"><a class="nav-link" href="compromiso.html">Quen Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="organigrama.html">Organigrama</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto e Localización</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container py-5">
+        <a href="index.html" class="text-info text-decoration-none mb-4 d-inline-block">
+            <i class="bi bi-arrow-left"></i> Volver ó inicio
+        </a>
+        <h1 class="text-white fw-bold mb-5 display-5">O Noso Compromiso <span style="color: #38a1db;">Técnico</span>
+        </h1>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card bg-dark border-0 p-4 h-100 shadow-neon">
+                    <i class="bi bi-clock-history fs-1 text-info mb-3"></i>
+                    <h4 class="text-white">Rapidez (24h - 48h)</h4>
+                    <p class="text-secondary">Entendemos que o teu dispositivo é vital. Garantimos un tempo de resposta
+                        récord para que non te quedes desconectado máis tempo do necesario.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card bg-dark border-0 p-4 h-100 shadow-neon">
+                    <i class="bi bi-shield-check fs-1 text-info mb-3"></i>
+                    <h4 class="text-white">Profesionalidade Garantida</h4>
+                    <p class="text-secondary">Contamos cun equipo de técnicos certificados que tratan cada dispositivo
+                        con precisión quirúrgica, utilizando compoñentes de alta calidade.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card bg-dark border-0 p-4 h-100 shadow-neon">
+                    <i class="bi bi-house-door fs-1 text-info mb-3"></i>
+                    <h4 class="text-white">Servizo a domicilio</h4>
+                    <p class="text-secondary">A túa comodidade é a nosa prioridade. Recollida e entrega na porta da túa
+                        casa para que o proceso de reparación sexa invisible para ti.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 p-4 border-start border-info border-4 bg-dark bg-opacity-50">
+            <h5 class="text-white">Garantía TechFixPGZ</h5>
+            <p class="text-secondary mb-0">Cada reparación que realizamos inclúe unha garantía técnica de seguimento. Se
+                o problema persiste, nós facémonos cargo. O noso obxectivo é a túa tranquilidade total.</p>
+        </div>
+    </main>
+    <footer class="text-center py-3 mt-auto"
+        style="background-color: #000000 !important; border-top: 1px solid #1a1a1a !important;">
+        <div class="container">
+            <p class="m-0 text-white tracking-wide font-monospace"
+                style="text-shadow: 0 0 5px rgba(255,255,255,0.3); font-size: 0.85rem;">
+                Alma galega, conectando co futuro dende a nosa terra.
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="translator.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById('pageOverlay').classList.add('fade-out');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - TechFixPGZ</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-black text-white">
+    <div class="page-transition-overlay" id="pageOverlay">
+        <div class="spinner-neon"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top m-0">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="archivos/blanco_sin_fondo.png" alt="💻" width="35" height="35"
+                    class="me-3 d-inline-block align-text-top nav-logo-grey">
+                <span class="fw-bold text-white fs-4">
+                    TechFix<span style="color: #38a1db;">P</span>G<span style="color: #38a1db;">Z</span>
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="reparacions.html">Servizos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Tenda Virtual</a></li>
+                    <li class="nav-item"><a class="nav-link" href="compromiso.html">Quen Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="organigrama.html">Organigrama</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto e Localización</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container py-5">
+        <h1 class="text-white fw-bold mb-5 display-5 text-uppercase">Contacto e Localización</h1>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card bg-dark border-0 p-4 shadow-neon h-100">
+                    <h4 class="text-info mb-4"><i class="bi bi-geo-alt-fill"></i> Onde estamos</h4>
+                    <p class="text-white">Rúa Nsa. Sra. da Saínza, 14<br>32005 Ourense</p>
+
+                    <h4 class="text-info mt-4 mb-3"><i class="bi bi-telephone-fill"></i> Teléfono</h4>
+                    <p class="text-white">+34 988 67 38 18</p>
+
+                    <h4 class="text-info mt-4 mb-3"><i class="bi bi-envelope-fill"></i> Email</h4>
+                    <p class="text-white">techfixpgz@gmail.com</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-dark border-0 p-4 shadow-neon h-100">
+                    <h4 class="text-info mb-4"><i class="bi bi-share-fill"></i> Síguenos</h4>
+                    <div class="d-flex gap-4 fs-2">
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <p class="text-secondary mt-3">Mantente ao día de todas as nosas novidades técnicas e ofertas na
+                        tenda virtual.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 p-4 bg-dark text-center shadow-neon">
+            <h4 class="text-white mb-3">Onde nos atopar</h4>
+            <div class="ratio ratio-16x9">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3541.059586793479!2d-7.864634223326847!3d42.32967037119571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2ffed011c945a1%3A0x3d4a3cd3cf0ebfdb!2sSupermercados%20Gadis!5e1!3m2!1ses!2ses!4v1780614266774!5m2!1ses!2ses"
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+        <footer class="text-center py-3 mt-auto"
+            style="background-color: #000000 !important; border-top: 1px solid #1a1a1a !important;">
+            <div class="container">
+                <p class="m-0 text-white font-monospace" style="font-size: 0.85rem;">Alma galega, conectando co futuro.
+                </p>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="translator.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.getElementById('pageOverlay').classList.add('fade-out');
+            });
+        </script>
+</body>
+</html>

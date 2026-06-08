@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFixPGZ - Benvida</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-black text-white">
+    <div class="page-transition-overlay" id="pageOverlay">
+        <div class="spinner-neon"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top m-0">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="archivos/blanco_sin_fondo.png" alt="💻" width="35" height="35"
+                    class="me-3 d-inline-block align-text-top nav-logo-grey">
+                <span class="fw-bold text-white fs-4">
+                    TechFix<span style="color: #38a1db;">P</span>G<span style="color: #38a1db;">Z</span>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="reparacions.html">Servizos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Tenda Virtual</a></li>
+                    <li class="nav-item"><a class="nav-link" href="compromiso.html">Quen Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="organigrama.html">Organigrama</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto e Localización</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="flex-grow-1 d-flex flex-column justify-content-center align-items-center text-center py-5" id="inicio">
+        <div class="container">
+            <h1 class="display-3 fw-bold text-white mb-4">
+                Benvido a TechFix<span class="neon-p flicker-blue">P</span><span
+                    class="neon-g flicker-white">G</span><span class="neon-z flicker-blue">Z</span>
+            </h1>
+            <div class="row g-4 justify-content-center max-width-menu mx-auto">
+                <div class="col-12 col-md-4 card-link-wrapper">
+                    <a href="reparacions.html" class="text-decoration-none">
+                        <div class="card-custom">
+                            <div class="menu-icon-wrapper mb-3"><i class="bi bi-wrench-adjustable-circle"></i></div>
+                            <span class="menu-link-text">Reparación de dispositivos. </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4 card-link-wrapper">
+                    <a href="catalogo.html" class="text-decoration-none">
+                        <div class="card-custom">
+                            <div class="menu-icon-wrapper mb-3"><i class="bi bi-cart3"></i></div>
+                            <span class="menu-link-text">Smartphones e accesorios.</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4 card-link-wrapper">
+                    <a href="compromiso.html" class="text-decoration-none">
+                        <div class="card-custom">
+                            <div class="menu-icon-wrapper mb-3"><i class="bi bi-people"></i></div>
+                            <span class="menu-link-text">O noso compromiso técnico.</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4 card-link-wrapper mt-md-4">
+                    <a href="organigrama.html" class="text-decoration-none">
+                        <div class="card-custom">
+                            <div class="menu-icon-wrapper mb-3"><i class="bi bi-diagram-3"></i></div>
+                            <span class="menu-link-text">Estrutura interna corporativa.</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4 card-link-wrapper mt-md-4">
+                    <a href="contacto.html" class="text-decoration-none">
+                        <div class="card-custom">
+                            <div class="menu-icon-wrapper mb-3"><i class="bi bi-geo-alt"></i></div>
+                            <span class="menu-link-text">Dirección física en Ourense.</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center py-3 mt-auto"
+        style="background-color: #000000 !important; border-top: 1px solid #1a1a1a !important;">
+        <div class="container">
+            <p class="m-0 text-white tracking-wide font-monospace"
+                style="text-shadow: 0 0 5px rgba(255,255,255,0.3); font-size: 0.85rem;">
+                Alma galega, conectando co futuro dende a nosa terra.
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="translator.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const overlay = document.getElementById('pageOverlay');
+            setTimeout(() => { overlay.classList.add('fade-out'); }, 100);
+        });
+
+        document.querySelectorAll('a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && !href.startsWith('#') && !link.hasAttribute('data-bs-toggle') && link.target !== '_blank') {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetUrl = this.href;
+                    document.getElementById('pageOverlay').classList.remove('fade-out');
+                    setTimeout(() => { window.location.href = targetUrl; }, 300);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

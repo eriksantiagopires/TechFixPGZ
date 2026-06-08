@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFixPGZ - Reparacións</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-black text-white">
+    <div class="page-transition-overlay" id="pageOverlay"></div>
+    <div class="spinner-neon"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top m-0">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="archivos/blanco_sin_fondo.png" alt="💻" width="35" height="35"
+                    class="me-3 d-inline-block align-text-top nav-logo-grey">
+                <span class="fw-bold text-white fs-4">
+                    TechFix<span style="color: #38a1db;">P</span>G<span style="color: #38a1db;">Z</span>
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="reparacions.html">Servizos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Tenda Virtual</a></li>
+                    <li class="nav-item"><a class="nav-link" href="compromiso.html">Quen Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="organigrama.html">Organigrama</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto e Localización</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="flex-grow-1">
+        <header class="pt-5 pb-4 text-center">
+            <div class="container py-2">
+                <div class="mb-3">
+                    <a href="index.html" class="text-decoration-none small"
+                        style="color: #38a1db; letter-spacing: 1px; font-weight: 600;">
+                        ← VOLVER AO INICIO
+                    </a>
+                </div>
+                <div class="tech-icon mb-2">
+                    <i class="bi bi-wrench-adjustable text-white fs-2"></i>
+                </div>
+                <h1 class="display-5 fw-bold text-white mb-2 text-uppercase tracking-wide">Servizos de Reparación</h1>
+                <p class="text-light-muted col-lg-6 mx-auto small">Explora as nosas opcións dispoñibles. Selecciona unha
+                    categoría ou filtra co buscador para atopar o que necesitas.</p>
+            </div>
+        </header>
+        <section class="pb-5">
+            <div class="container">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 mb-5">
+                    <div class="tech-tabs">
+                        <button class="tab-btn active" onclick="switchTab('mobiles')">Móbiles e Tablets</button>
+                        <button class="tab-btn" onclick="switchTab('ordenadores')">Ordenadores</button>
+                    </div>
+                    <div class="search-wrapper">
+                        <input type="text" id="techSearch" onkeyup="filterGrid()"
+                            placeholder="Buscar reparación (batería, pantalla...)...">
+                    </div>
+                </div>
+                <div class="row g-4" id="servicesGrid">
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="mobiles">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-phone-vibrate catalog-icon-minimal"></i>
+                            </div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Cambiar Pantalla</h3>
+                                <p class="catalog-subtitle">Smartphones (OLED / LCD / AMOLED)</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+150)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">49€ - 249€</span></div>
+                                <p class="catalog-footer-text">Diagnóstico previo gratuíto na nosa tenda.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="mobiles">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-battery-charging catalog-icon-minimal"></i>
+                            </div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Cambiar Batería</h3>
+                                <p class="catalog-subtitle">Smartphones (Todas as marcas e modelos)</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐⭐</span> <span
+                                        class="rating-count">(+230)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">29€ - 89€</span></div>
+                                <p class="catalog-footer-text">Compoñentes con garantía de ata 1 ano.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="mobiles">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-usb-c catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Reparar Conector de Carga</h3>
+                                <p class="catalog-subtitle">Portos USB-C, Lightning e Micro-USB</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+85)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">35€ - 65€</span></div>
+                                <p class="catalog-footer-text">Solución a problemas de falso contacto.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="mobiles">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-tablet-landscape catalog-icon-minimal"></i>
+                            </div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Cambiar Pantalla / Cristal</h3>
+                                <p class="catalog-subtitle">Tablets (iPad, Samsung Galaxy Tab, Xiaomi)</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+64)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">59€ - 199€</span></div>
+                                <p class="catalog-footer-text">Calibración táctil exacta de alta precisión.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="mobiles">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-shield-shaded catalog-icon-minimal"></i>
+                            </div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Cambiar Tapa Traseira</h3>
+                                <p class="catalog-subtitle">Cristal traseiro ou chasis de aluminio danado</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+92)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">25€ - 95€</span></div>
+                                <p class="catalog-footer-text">Substitución técnica con selado perimetral.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="mobiles">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-cpu catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Recuperación e Software</h3>
+                                <p class="catalog-subtitle">Desbloqueo, bucle de arranque ou malware</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐⭐</span> <span
+                                        class="rating-count">(+104)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">25€ - 50€</span></div>
+                                <p class="catalog-footer-text">Actualización do sistema operativo mantendo datos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="mobiles">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-camera catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Reparar Cámara</h3>
+                                <p class="catalog-subtitle">Substitución de lentes e módulos de enfoque</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+45)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">45€ - 110€</span></div>
+                                <p class="catalog-footer-text">Fotos nítidas e enfocadas de novo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="mobiles">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-mic catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Reparar Audio/Altavoz</h3>
+                                <p class="catalog-subtitle">Solución a problemas de son e micrófonos</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐⭐</span> <span
+                                        class="rating-count">(+72)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">30€ - 55€</span></div>
+                                <p class="catalog-footer-text">Limpeza ou substitución de compoñentes de audio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="mobiles">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-fingerprint catalog-icon-minimal"></i>
+                            </div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Sensor de Huella</h3>
+                                <p class="catalog-subtitle">Reparación de lectores de seguridade</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+38)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">40€ - 70€</span></div>
+                                <p class="catalog-footer-text">Seguridade biométrica restaurada.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="mobiles">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-wifi catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Módulo Wi-Fi / Bluetooth</h3>
+                                <p class="catalog-subtitle">Problemas de conexión inalámbrica</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+55)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">35€ - 80€</span></div>
+                                <p class="catalog-footer-text">Estabilidade total na túa rede.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="mobiles">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-droplet-half catalog-icon-minimal"></i>
+                            </div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Tratamento Humidade</h3>
+                                <p class="catalog-subtitle">Reanimación de dispositivos mollados</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐⭐</span> <span
+                                        class="rating-count">(+90)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">40€ - 120€</span></div>
+                                <p class="catalog-footer-text">Limpeza ultrasónica profesional.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="mobiles">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-keyboard catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Teclado Tablet</h3>
+                                <p class="catalog-subtitle">Reparación de teclados externos/conectores</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+25)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">25€ - 60€</span></div>
+                                <p class="catalog-footer-text">Recupera a produtividade no teu traballo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="ordenadores"
+                        style="display: none;">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-laptop catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Cambiar Pantalla</h3>
+                                <p class="catalog-subtitle">Portátiles (Calquera tamanho: 13" a 17.3")</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+43)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">79€ - 189€</span></div>
+                                <p class="catalog-footer-text">Paneis LED de alta definición antirreflexos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="ordenadores"
+                        style="display: none;">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-snow catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Mantenemento Técnico</h3>
+                                <p class="catalog-subtitle">Limpeza interna profunda + Pasta térmica</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐⭐</span> <span
+                                        class="rating-count">(+310)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">35€ - 55€</span></div>
+                                <p class="catalog-footer-text">Evita sobrequecementos e mellora o rendemento.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="ordenadores"
+                        style="display: none;">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-window-dash catalog-icon-minimal"></i>
+                            </div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Instalar Sistema Operativo</h3>
+                                <p class="catalog-subtitle">Windows/Linux, configuración e drivers</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+115)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">40€ - 60€</span></div>
+                                <p class="catalog-footer-text">Inclúe optimización inicial e backup opcional.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="ordenadores"
+                        style="display: none;">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-hdd-rack catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Cambiar / Ampliar Disco SSD</h3>
+                                <p class="catalog-subtitle">Mellora de velocidade extrema (Torres/Portátiles)</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐⭐</span> <span
+                                        class="rating-count">(+180)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">45€ - 149€</span></div>
+                                <p class="catalog-footer-text">Multiplica por 10 a velocidade do teu vello ordenador.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="ordenadores"
+                        style="display: none;">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-moisture catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Reparación por Líquidos</h3>
+                                <p class="catalog-subtitle">Limpeza por ultrasonidos de placas molladas</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+52)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">60€ - 120€</span></div>
+                                <p class="catalog-footer-text">Tratamento químico contra a corrosión interna.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="ordenadores"
+                        style="display: none;">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-plug catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Reparar Fonte de Alimentación</h3>
+                                <p class="catalog-subtitle">O PC non acende ou apágase de forma repentina</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐⭐</span> <span
+                                        class="rating-count">(+78)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">45€ - 95€</span></div>
+                                <p class="catalog-footer-text">Substitución de compoñentes con certificado de enerxía.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="ordenadores"
+                        style="display: none;">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-gpu-card catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Reparar Tarxeta Gráfica</h3>
+                                <p class="catalog-subtitle">Reballing e reparación de soldaduras</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+68)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">80€ - 250€</span></div>
+                                <p class="catalog-footer-text">Solución para problemas de vídeo e artifacts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="ordenadores"
+                        style="display: none;">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-memory catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Ampliación de RAM</h3>
+                                <p class="catalog-subtitle">Mellora de memoria para alto rendemento</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐⭐</span> <span
+                                        class="rating-count">(+210)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">30€ - 90€</span></div>
+                                <p class="catalog-footer-text">Multitarea sen ralentizacións.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="ordenadores"
+                        style="display: none;">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-fan catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Cambiar Ventilador</h3>
+                                <p class="catalog-subtitle">Eliminación de ruídos e sobrequecemento</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+140)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">25€ - 65€</span></div>
+                                <p class="catalog-footer-text">Fluxo de aire óptimo para o teu equipo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="ordenadores"
+                        style="display: none;">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-virus catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Limpeza de Malware</h3>
+                                <p class="catalog-subtitle">Eliminación de virus, troyanos e adware</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐⭐</span> <span
+                                        class="rating-count">(+190)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">30€ - 50€</span></div>
+                                <p class="catalog-footer-text">Navegación segura e sen ameazas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="ordenadores"
+                        style="display: none;">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i
+                                    class="bi bi-file-earmark-lock catalog-icon-minimal"></i></div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Recuperación de Datos</h3>
+                                <p class="catalog-subtitle">Recuperación de ficheiros borrados ou discos danados</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐★</span> <span
+                                        class="rating-count">(+95)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">50€ - 300€</span></div>
+                                <p class="catalog-footer-text">Intentamos recuperar os teus documentos vitais.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 repair-card-item" data-category="ordenadores"
+                        style="display: none;">
+                        <div class="catalog-card" onclick="openDetails(this)">
+                            <div class="catalog-img-wrapper"><i class="bi bi-battery-full catalog-icon-minimal"></i>
+                            </div>
+                            <div class="catalog-body">
+                                <h3 class="catalog-title">Batería de Portátil</h3>
+                                <p class="catalog-subtitle">Substitución de baterías vellas ou hinchadas</p>
+                                <div class="catalog-rating"><span class="stars">⭐⭐⭐⭐⭐</span> <span
+                                        class="rating-count">(+110)</span></div>
+                                <div class="catalog-price-box"><span class="price-label">Prezo estimado:</span><span
+                                        class="price-value">40€ - 110€</span></div>
+                                <p class="catalog-footer-text">Gañando autonomía e horas de traballo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="noResults" class="text-center mt-5 text-light-muted small" style="display: none;">
+                    Non se atoparon servizos correspondentes coa túa busca. Contacta connosco.
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <div class="modal fade" id="repairModal" tabindex="-1" aria-labelledby="repairModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal-content" id="modalDynamicContent">
+            </div>
+        </div>
+    </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1055;">
+        <div id="techToast" class="toast custom-toast" role="alert" aria-live="assertive" aria-atomic="true"
+            data-bs-delay="6000">
+            <div class="toast-header border-0 bg-transparent text-white pb-0 justify-content-between">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-check-circle-fill"
+                        style="color: #38a1db; filter: drop-shadow(0 0 4px #38a1db);"></i>
+                    <strong class="me-auto text-uppercase tracking-wide"
+                        style="font-size: 0.75rem; letter-spacing: 1px;">Solicitude Completada</strong>
+                </div>
+                <button type="button" class="btn-close btn-close-white small" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-light-muted" id="toastMessage"></div>
+        </div>
+    </div>
+    <footer class="text-center py-3 mt-auto"
+        style="background-color: #000000 !important; border-top: 1px solid #1a1a1a !important;">
+        <div class="container">
+            <p class="m-0 text-white tracking-wide font-monospace"
+                style="text-shadow: 0 0 5px rgba(255,255,255,0.3); font-size: 0.85rem;">
+                Alma galega, conectando co futuro dende a nosa terra.
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="translator.js"></script>
+    <script>
+        let currentCategory = 'mobiles';
+        let myModal;
+        let selectedService = {};
+        document.addEventListener("DOMContentLoaded", function () {
+            myModal = new bootstrap.Modal(document.getElementById('repairModal'));
+            const overlay = document.getElementById('pageOverlay');
+            setTimeout(() => {
+                overlay.classList.add('fade-out');
+            }, 100);
+        });
+        function switchTab(category) {
+            currentCategory = category;
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            document.getElementById('techSearch').value = '';
+            runFiltering();
+        }
+        function filterGrid() { runFiltering(); }
+        function runFiltering() {
+            const query = document.getElementById('techSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.repair-card-item');
+            let visibleCounter = 0;
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                const textContent = card.textContent.toLowerCase();
+                if (cardCategory === currentCategory && textContent.includes(query)) {
+                    card.style.display = 'block';
+                    visibleCounter++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            document.getElementById('noResults').style.display = visibleCounter > 0 ? 'none' : 'block';
+        }
+        // PASO 1: Ficha técnica do servizo e configuración rápida
+        function openDetails(cardElement) {
+            selectedService = {
+                title: cardElement.querySelector('.catalog-title').innerText,
+                subtitle: cardElement.querySelector('.catalog-subtitle').innerText,
+                price: cardElement.querySelector('.price-value').innerText,
+                ratingHTML: cardElement.querySelector('.catalog-rating').innerHTML,
+                iconClass: cardElement.querySelector('.catalog-icon-minimal').className
+            };
+            renderModalStep1();
+            myModal.show();
+        }
+        function renderModalStep1() {
+            const container = document.getElementById('modalDynamicContent');
+            container.innerHTML = `
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0 text-center entry-fade">
+                    <div class="modal-img-container mb-3">
+                        <i class="${selectedService.iconClass}" style="font-size: 2rem; color: #38a1db; filter: drop-shadow(0 0 8px rgba(56, 161, 219, 0.85));"></i>
+                    </div>
+                    <h2 class="h4 fw-bold text-white mb-1">${selectedService.title}</h2>
+                    <p class="text-muted small mb-3">${selectedService.subtitle}</p>
+                    <div class="mb-3 small">${selectedService.ratingHTML}</div>
+                    
+                    <div class="modal-price-display py-2 px-3 mb-4">
+                        <span class="d-block text-uppercase small text-muted" style="font-size: 0.7rem; letter-spacing: 0.5px;">Orzamento Base Estimado</span>
+                        <span class="fs-3 fw-extrabold text-white">${selectedService.price}</span>
+                    </div>
+
+                    <div class="text-start mb-4">
+                        <label class="form-label text-white small fw-bold text-uppercase mb-2" style="letter-spacing: 0.5px;">Configura a túa solicitude:</label>
+                        <div class="form-check custom-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="checkExpress">
+                            <label class="form-check-input-label text-light-muted small" for="checkExpress">
+                                <strong>Servizo Urxente Exprés (+20€)</strong><br>
+                                <span class="text-muted" style="font-size: 0.75rem;">Reparación prioritaria en menos de 2 horas.</span>
+                            </label>
+                        </div>
+                        <div class="form-check custom-check">
+                            <input class="form-check-input" type="checkbox" id="checkEnvio">
+                            <label class="form-check-input-label text-light-muted small" for="checkEnvio">
+                                <strong>Recollida e envío a domicilio (+9.95€)</strong><br>
+                                <span class="text-muted" style="font-size: 0.75rem;">Recollida na túa casa en calquera punto de Galicia.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-action-tech w-100 py-2 fw-bold text-uppercase" onclick="confirmService()">
+                        Solicitar Cita / Orzamento
+                    </button>
+                </div>
+            `;
+        }
+        // PASO 2: Mutación del modal para solicitar datos de contacto y detalles del producto
+        function confirmService() {
+            selectedService.express = document.getElementById('checkExpress').checked ? "con Servizo Exprés" : "estándar";
+            selectedService.envio = document.getElementById('checkEnvio').checked ? "e recollida na casa." : "con entrega física en tenda.";
+            const container = document.getElementById('modalDynamicContent');
+            container.innerHTML = `
+        <div class="modal-header border-0 pb-0">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-0 entry-fade">
+            <div class="text-center mb-4">
+                <h3 class="h5 fw-bold text-white mb-1 text-uppercase tracking-wide">Datos e Produto</h3>
+                <p class="text-muted small m-0">Indícanos os datos do equipo e o problema.</p>
+            </div>
+            <form id="techContactForm" onsubmit="sendContactData(event)">
+                <div class="mb-2">
+                    <label for="deviceModel" class="form-label tech-form-label">Marca e Modelo *</label>
+                    <input type="text" class="form-control tech-input" id="deviceModel" required placeholder="Ex: iPhone 13, Samsung S22...">
+                </div>
+                <div class="mb-3">
+                    <label for="deviceIssue" class="form-label tech-form-label">Describe o problema *</label>
+                    <textarea class="form-control tech-input" id="deviceIssue" required rows="2" placeholder="Ex: A pantalla non acende..."></textarea>
+                </div>
+                <div class="mb-2">
+                    <label for="clientName" class="form-label tech-form-label">Nome completo *</label>
+                    <input type="text" class="form-control tech-input" id="clientName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="clientPhone" class="form-label tech-form-label">Teléfono *</label>
+                    <input type="tel" class="form-control tech-input" id="clientPhone" required>
+                </div>
+                <div class="d-flex gap-2">
+                    <button type="button" class="btn btn-action-tech py-2 px-3 m-0" style="width: auto;" onclick="renderModalStep1()">
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
+                    <button type="submit" class="btn btn-action-tech flex-grow-1 py-2 fw-bold text-uppercase">
+                        Confirmar
+                    </button>
+                </div>
+            </form>
+        </div>
+    `;
+        }
+        // PASO 3: Lanzamento final da notificación con a nova información
+        function sendContactData(event) {
+            event.preventDefault();
+            const userName = document.getElementById('clientName').value;
+            const model = document.getElementById('deviceModel').value;
+            const issue = document.getElementById('deviceIssue').value;
+            const toastContent = `
+        <p class="mb-2 text-white">Grazas, <strong>${userName}</strong>!</p>
+        <p class="mb-2 text-white">Recibimos a solicitude para: <strong>${model}</strong>.</p>
+        <p class="mb-2 text-white">Problema: <em>${issue}</em></p>
+        <p class="m-0" style="font-size: 0.8rem; color: #38a1db; font-weight: 600;">Un técnico revisará o teu caso en breve.</p>
+    `;
+            document.getElementById('toastMessage').innerHTML = toastContent;
+            myModal.hide();
+            const toastElement = document.getElementById('techToast');
+            const bootstrapToast = bootstrap.Toast.getOrCreateInstance(toastElement);
+            bootstrapToast.show();
+        }
+    </script>
+</body>
+</html>
