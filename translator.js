@@ -1,9 +1,3 @@
-/**
- * TechFixPGZ - Cyberpunk Language Translator
- * Handles client-side translation between Galician (gl) and English (en)
- * with persistence, dynamic UI injection, and MutationObserver for dynamic components.
- */
-
 const translations = {
     // Navbar links
     "Servizos": "Services",
