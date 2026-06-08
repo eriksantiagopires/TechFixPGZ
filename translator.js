@@ -191,6 +191,8 @@ const translations = {
 function translateDOM(root, toLang) {
     if (!root) return;
 
+    const cleanText = (str) => str.replace(/\s+/g, ' ').trim();
+
     // Use TreeWalker to inspect all text nodes safely
     const walker = document.createTreeWalker(
         root,
@@ -201,7 +203,8 @@ function translateDOM(root, toLang) {
 
     let textNode;
     while (textNode = walker.nextNode()) {
-        const text = textNode.nodeValue.trim();
+        const rawText = textNode.nodeValue;
+        const text = cleanText(rawText);
         if (!text) continue;
 
         // Skip translation button text node
@@ -212,21 +215,21 @@ function translateDOM(root, toLang) {
         // Special handling for dynamic titles like "Configuración de [Smartphone]"
         if (toLang === 'en') {
             if (text.startsWith("Configuración de ")) {
-                textNode.nodeValue = textNode.nodeValue.replace("Configuración de ", "Configuration of ");
+                textNode.nodeValue = rawText.replace(/Configuración de\s*/, "Configuration of ");
                 continue;
             }
             if (translations[text]) {
-                textNode.nodeValue = textNode.nodeValue.replace(text, translations[text]);
+                textNode.nodeValue = translations[text];
             }
         } else {
             // Reverse lookup: English to Galician
             if (text.startsWith("Configuration of ")) {
-                textNode.nodeValue = textNode.nodeValue.replace("Configuration of ", "Configuración de ");
+                textNode.nodeValue = rawText.replace(/Configuration of\s*/, "Configuración de ");
                 continue;
             }
-            const key = Object.keys(translations).find(k => translations[k] === text);
+            const key = Object.keys(translations).find(k => cleanText(translations[k]) === text);
             if (key) {
-                textNode.nodeValue = textNode.nodeValue.replace(text, key);
+                textNode.nodeValue = key;
             }
         }
     }
@@ -242,7 +245,7 @@ function translateDOM(root, toLang) {
                 input.placeholder = translations[placeholder];
             }
         } else {
-            const key = Object.keys(translations).find(k => translations[k] === placeholder);
+            const key = Object.keys(translations).find(k => cleanText(translations[k]) === placeholder);
             if (key) {
                 input.placeholder = key;
             }
