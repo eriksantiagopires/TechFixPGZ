@@ -335,3 +335,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(document.body, { childList: true, subtree: true });
 });
+window.addEventListener('pageshow', function (event) {
+    // Si la página se carga desde la caché (bfcache), quitamos el overlay
+    if (event.persisted) {
+        const overlay = document.getElementById('pageOverlay');
+        if (overlay) {
+            overlay.classList.add('fade-out');
+            // Opcional: eliminarlo del DOM después de la animación
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 500); 
+        }
+    }
+});
